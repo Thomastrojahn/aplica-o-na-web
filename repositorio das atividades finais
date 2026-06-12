@@ -1,1 +1,69 @@
+código atividade 1: (nome)
 
+package com.example.demo;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class NomeController {
+
+    @GetMapping("/nome")
+    public String nome() {
+        return "João da Silva";
+    }
+}
+
+código atividade 2: (cpf)
+
+package com.example.demo;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class CpfController {
+
+    @GetMapping("/cpf")
+    public String cpf() {
+        return "123.456.789-00";
+    }
+}
+
+código atividade 3: (endereço)
+
+package com.example.demo;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class EnderecoController {
+
+    @GetMapping("/endereco")
+    public String endereco() {
+        return "Rua dos Andradas, 1614 - Santa Maria RS";
+    }
+}
+
+código atividade 4: (soma)
+
+package com.example.demo;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class SomaController {
+
+    @GetMapping("/soma")
+    public String soma(
+            @RequestParam int a,
+            @RequestParam int b) {
+
+        int resultado = a + b;
+
+        return "Resultado: " + resultado;
+    }
+}
