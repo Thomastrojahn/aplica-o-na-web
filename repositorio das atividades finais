@@ -67,3 +67,83 @@ public class SomaController {
         return "Resultado: " + resultado;
     }
 }
+
+código atividade 5: (aluno)
+
+package com.exemplo.demo;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class AlunoController {
+
+    @GetMapping("/aluno")
+    public String aluno() {
+        return "Nome: João da Silva\nCurso: Sistemas de Informação";
+    }
+
+código atividade 6: (professor)
+
+package com.exemplo.demo.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class ProfessorController {
+
+    @GetMapping("/professor")
+    public String professor() {
+        return "Professor: Ana Paula Canal<br>Disciplina: Sistemas Operacionais";
+    }
+}
+
+código atividade 7: (soma2)
+
+package com.exemplo.demo.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class CalculadoraController {
+
+    @GetMapping("/calculadora")
+    public String calculadora(
+            @RequestParam double a,
+            @RequestParam double b,
+            @RequestParam String operacao) {
+
+        double resultado;
+
+        switch (operacao.toLowerCase()) {
+            case "soma":
+                resultado = a + b;
+                break;
+
+            case "subtracao":
+                resultado = a - b;
+                break;
+
+            case "multiplicacao":
+                resultado = a * b;
+                break;
+
+            case "divisao":
+                if (b == 0) {
+                    return "Erro: divisão por zero!";
+                }
+                resultado = a / b;
+                break;
+
+            default:
+                return "Operação inválida!";
+        }
+
+        return "Resultado: " + resultado;
+    }
+}
+
+
